@@ -1,4 +1,14 @@
 section.page.pageTwo
-  h2 Simple Page Example
+  h2 Info and tricks
 
-  p This page was rendered by a simple page view file at client/pages/info.js.
+  p Tic-tac-toe (also known as Noughts and crosses or Xs and Os) is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+  p The rules to win are simple:
+    ul
+      li  If the player has two in a row, they can place a third to get three in a row.
+      li  If the opponent has two in a row, the player must play the third themselves to block the opponent.
+      li  Create an opportunity where the player has two threats to win (two non-blocked lines of 2).
+      li  If there is a configuration where the opponent can fork, the player should block that fork.
+      li  A player marks the center. (If it is the first move of the game, playing on a corner gives "O" more opportunities to make a mistake and may therefore be the better choice; however, it makes no difference between perfect players.)
+      li  If the opponent is in the corner, the player plays the opposite corner.
+      li  The player plays in a corner square.
+      li  The player plays in a middle square on any of the 4 sides.
