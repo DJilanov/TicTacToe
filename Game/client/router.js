@@ -1,7 +1,7 @@
 var app = require('ampersand-app');
 var Router = require('ampersand-router');
 var HomePage = require('./pages/home');
-var game = require('./pages/collection-demo');
+var game = require('./pages/game');
 var InfoPage = require('./pages/info');
 
 
@@ -21,10 +21,10 @@ module.exports = Router.extend({
     },
 
     game: function () {
-        // app.trigger('page', new CollectionDemo({
-        //     model: app.me,
-        //     collection: app.people
-        // }));
+        app.trigger('page', new game({
+            model: app.me
+            // collection: app.people
+        }));
     },
 
     info: function () {

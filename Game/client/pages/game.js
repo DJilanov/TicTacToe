@@ -1,11 +1,10 @@
 var PageView = require('./base');
 var templates = require('../templates');
-var PersonView = require('../views/person');
 
 
 module.exports = PageView.extend({
-    pageTitle: 'collection demo',
-    template: templates.pages.collectionDemo,
+    pageTitle: 'game',
+    template: templates.pages.info,
     events: {
         'click [data-hook~=shuffle]': 'shuffle',
         'click [data-hook~=fetch]': 'fetchCollection',
