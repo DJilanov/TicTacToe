@@ -3,6 +3,6 @@ var templates = require('../templates');
 
 
 module.exports = PageView.extend({
-    pageTitle: 'home',
+    pageTitle: 'Home',
     template: templates.pages.home
 });

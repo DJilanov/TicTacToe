@@ -3,27 +3,13 @@ var templates = require('../templates');
 
 
 module.exports = PageView.extend({
-    pageTitle: 'game',
-    template: templates.pages.info,
+    pageTitle: 'Game home',
+    template: templates.pages.game,
     events: {
-        'click [data-hook~=shuffle]': 'shuffle',
-        'click [data-hook~=fetch]': 'fetchCollection',
-        'click [data-hook~=reset]': 'resetCollection',
-        'click [data-hook~=add]': 'addRandom'
+        'click [data-hook~=shuffle]': 'shuffle'
     },
     render: function () {
         this.renderWithTemplate();
-        this.renderCollection(this.collection, PersonView, this.queryByHook('people-list'));
-        if (!this.collection.length) {
-            this.fetchCollection();
-        }
-    },
-    fetchCollection: function () {
-        this.collection.fetch();
-        return false;
-    },
-    resetCollection: function () {
-        this.collection.reset();
     },
     shuffle: function () {
         this.collection.comparator = function () {
@@ -33,17 +19,4 @@ module.exports = PageView.extend({
         delete this.collection.comparator;
         return false;
     },
-    addRandom: function () {
-        function getRandom(min, max) {
-            return min + Math.floor(Math.random() * (max - min + 1));
-        }
-        var firstNames = 'Joe Harry Larry Sue Bob Rose Angela Tom Merle Joseph Josephine'.split(' ');
-        var lastNames = 'Smith Jewel Barker Stephenson Rossum Crockford'.split(' ');
-
-        this.collection.create({
-            firstName: firstNames[getRandom(0, firstNames.length - 1)],
-            lastName: lastNames[getRandom(0, lastNames.length - 1)],
-            coolnessFactor: getRandom(0, 11)
-        });
-    }
 });

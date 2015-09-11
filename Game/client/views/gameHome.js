@@ -3,7 +3,7 @@ var templates = require('../templates');
 
 
 module.exports = View.extend({
-    template: templates.includes.person,
+    template: templates.includes.gameHome,
     bindings: {
         'model.fullName': '[data-hook~=name]',
         'model.avatar': {
@@ -23,10 +23,10 @@ module.exports = View.extend({
         }
     },
     events: {
-        'click [data-hook~=action-delete]': 'handleRemoveClick'
+        'click [data-hook~=start-game]': 'startGame'
     },
-    handleRemoveClick: function () {
-        this.model.destroy();
+    startGame: function () {
+        debugger
         return false;
     }
 });

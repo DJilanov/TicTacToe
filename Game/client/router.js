@@ -22,7 +22,7 @@ module.exports = Router.extend({
 
     game: function () {
         app.trigger('page', new game({
-            model: app.me
+            model: app.game
             // collection: app.people
         }));
     },
